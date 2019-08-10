@@ -1,37 +1,34 @@
-apply plugin: 'com.android.application'
-
-apply plugin: 'kotlin-android'
-
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 28
+
+
     defaultConfig {
-        applicationId "innovappte.mobile.gamesinfo"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation project(":domain")
-    implementation project(":data")
-
     implementation Deps.kotlin
     implementation Deps.appCompat
     implementation Deps.androidXCore
-    implementation Deps.constrainLayout
 
     testImplementation TestDependencies.junit
 
