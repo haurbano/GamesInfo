@@ -9,8 +9,4 @@ interface MainActivityContract {
         fun fillFragments()
         fun attachView(view: View)
     }
-
-    interface Model {
-
-    }
 }
