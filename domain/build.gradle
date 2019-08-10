@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 28
@@ -29,6 +30,7 @@ dependencies {
     implementation Deps.kotlin
     implementation Deps.appCompat
     implementation Deps.androidXCore
+    implementation Deps.rxJava
 
     testImplementation TestDependencies.junit
 
