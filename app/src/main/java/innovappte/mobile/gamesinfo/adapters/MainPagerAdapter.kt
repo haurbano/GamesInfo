@@ -1,4 +1,4 @@
-package innovappte.mobile.gamesinfo.mainscreen.adapters
+package innovappte.mobile.gamesinfo.adapters
 
 
 import androidx.fragment.app.FragmentManager

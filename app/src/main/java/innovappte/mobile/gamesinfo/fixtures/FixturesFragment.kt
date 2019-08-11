@@ -4,11 +4,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
+import innovappte.mobile.domain.models.Fixture
 
 import innovappte.mobile.gamesinfo.R
+import innovappte.mobile.gamesinfo.adapters.FixtureAdapter
 import innovappte.mobile.gamesinfo.mainscreen.PagerFragment
+import innovappte.mobile.gamesinfo.viewmodels.FixtureViewModel
+import kotlinx.android.synthetic.main.fragment_fixtures.*
+import org.koin.android.ext.android.inject
 
-class FixturesFragment : PagerFragment() {
+class FixturesFragment : PagerFragment(), FixturesFragmentContract.View {
+
+    private val presenter : FixturesFragmentContract.Presenter by inject()
+    private val fixtureAdapter by lazy { FixtureAdapter() }
 
     override fun getFragmentTitle() = "Fixtures"
 
@@ -16,8 +27,34 @@ class FixturesFragment : PagerFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fixtures, container, false)
+        val view = inflater.inflate(R.layout.fragment_fixtures, container, false)
+        presenter.attachView(this)
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setUpRecyclerView()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        presenter.fillFixtures()
+    }
+
+    override fun updateFixtures(fixtures: List<FixtureViewModel>) {
+        fixtureAdapter.refreshItems(fixtures)
+    }
+
+    override fun showErroGettingFixtures() {
+        Snackbar.make(rvFixtures,getString(R.string.network_error_msg), Snackbar.LENGTH_LONG)
+            .setAction(getString(R.string.retry_msg)) { presenter.fillFixtures()}
+            .show()
+    }
+
+    private fun setUpRecyclerView() {
+        rvFixtures.adapter = fixtureAdapter
+        rvFixtures.layoutManager = LinearLayoutManager(this.context)
     }
 
     companion object {

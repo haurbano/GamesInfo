@@ -5,6 +5,7 @@ import Versions.constrain_layout_version
 import Versions.gson_version
 import Versions.koin_version
 import Versions.kotlin_version
+import Versions.materialGoogle
 import Versions.recyclerViewCK_VERSION
 import Versions.retrofit_version
 import Versions.rxjava2_version
@@ -20,6 +21,7 @@ object Versions {
     const val androidXCore_version      = "1.0.2"
     const val retrofit_version          = "2.6.1"
     const val androidXLegacyVersion     = "1.0.0"
+    const val materialGoogle            = "1.0.0-rc02"
 }
 
 object Deps {
@@ -36,6 +38,7 @@ object Deps {
     val androidXLegacy      =    "androidx.legacy:legacy-support-v4:$androidXLegacyVersion"
     val gsonConvert         =    "com.squareup.retrofit2:converter-gson:$retrofit_version"
     val rxjava2Adapter      =    "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    val materialGoogle      =    "com.google.android.material:material:${Versions.materialGoogle}"
 }
 
 object TestDependencies {

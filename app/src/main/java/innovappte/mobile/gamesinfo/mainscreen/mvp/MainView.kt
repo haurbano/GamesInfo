@@ -6,7 +6,7 @@ import innovappte.mobile.gamesinfo.fixtures.FixturesFragment
 import innovappte.mobile.gamesinfo.mainscreen.MainActivity
 import innovappte.mobile.gamesinfo.mainscreen.MainActivityContract
 import innovappte.mobile.gamesinfo.mainscreen.PagerFragment
-import innovappte.mobile.gamesinfo.mainscreen.adapters.MainPagerAdapter
+import innovappte.mobile.gamesinfo.adapters.MainPagerAdapter
 import innovappte.mobile.gamesinfo.results.ResultsFragment
 
 class MainView(private val activity: MainActivity): MainActivityContract.View {
