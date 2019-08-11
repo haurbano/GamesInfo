@@ -7,7 +7,6 @@ data class Fixture(
     val homeTeam: HomeTeam,
     val id: Int,
     val score: Score?,
-//    val state: String,
     val type: String,
     val venue: Venue
 )

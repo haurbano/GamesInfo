@@ -2,4 +2,6 @@
 <resources>
     <dimen name="competition_name_size">22sp</dimen>
     <dimen name="team_name_size">22sp</dimen>
+    <dimen name="day_number_size">25sp</dimen>
+    <dimen name="day_name_size">23sp</dimen>
 </resources>

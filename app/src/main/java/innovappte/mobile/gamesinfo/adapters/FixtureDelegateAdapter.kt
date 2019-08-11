@@ -33,6 +33,8 @@ class FixtureDelegateAdapter: ViewTypeDelagateAdapter {
                 matchDateAndTimeZone.text = "$readableDate at $readableHour"
                 this@FixtureViewHolder.homeTeam.text = homeTeam.name
                 this@FixtureViewHolder.awayTeam.text = awayTeam.name
+                dateFixture.text = dayInNumber
+                dayFixture.text = nameOfDay
             }
         }
     }

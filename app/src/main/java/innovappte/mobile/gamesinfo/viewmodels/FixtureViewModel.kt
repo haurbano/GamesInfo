@@ -9,10 +9,11 @@ data class FixtureViewModel(
     val competitionStage: CompetitionStage,
     val readableDate: String,
     val readableHour: String,
+    val dayInNumber: String,
+    val nameOfDay: String,
     val homeTeam: HomeTeam,
     val id: Int,
     val score: Score?,
-//    val state: String,
     val type: String,
     val venue: Venue
 ): ViewType {
