@@ -37,8 +37,8 @@ class FixturesFragment : PagerFragment(), FixturesFragmentContract.View {
         setUpRecyclerView()
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
         presenter.fillFixtures()
     }
 
@@ -46,7 +46,7 @@ class FixturesFragment : PagerFragment(), FixturesFragmentContract.View {
         fixtureAdapter.refreshItems(fixtures)
     }
 
-    override fun showErroGettingFixtures() {
+    override fun showErrorGettingFixtures() {
         Snackbar.make(rvFixtures,getString(R.string.network_error_msg), Snackbar.LENGTH_LONG)
             .setAction(getString(R.string.retry_msg)) { presenter.fillFixtures()}
             .show()

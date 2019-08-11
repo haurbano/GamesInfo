@@ -4,7 +4,7 @@ import innovappte.mobile.domain.models.*
 import innovappte.mobile.gamesinfo.adapters.ViewType
 import innovappte.mobile.gamesinfo.adapters.ViewTypeValues
 
-data class FixtureViewModel(
+open class FixtureViewModel(
     val awayTeam: AwayTeam,
     val competitionStage: CompetitionStage,
     val readableDate: String,
@@ -13,7 +13,6 @@ data class FixtureViewModel(
     val nameOfDay: String,
     val homeTeam: HomeTeam,
     val id: Int,
-    val score: Score?,
     val type: String,
     val venue: Venue
 ): ViewType {

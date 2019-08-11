@@ -4,5 +4,5 @@ import innovappte.mobile.domain.models.Fixture
 import io.reactivex.Single
 
 interface GetResultsUseCase {
-    fun invoke(): Single<List<Fixture>>
+    operator fun invoke(): Single<List<Fixture>>
 }

@@ -1,6 +1,5 @@
 package innovappte.mobile.gamesinfo.fixtures.mvp
 
-import android.util.Log
 import innovappte.mobile.gamesinfo.fixtures.FixturesFragmentContract
 import io.reactivex.disposables.CompositeDisposable
 
@@ -14,10 +13,9 @@ class FixturesPresenter(
 
     override fun fillFixtures() {
         val disposable = model.getFixtures()
-            .doOnError{ error -> Log.e("--haur", error.localizedMessage) }
             .subscribe(
             { fixtures -> view.updateFixtures(fixtures)},
-            { view.showErroGettingFixtures()}
+            { view.showErrorGettingFixtures()}
         )
         disposables.add(disposable)
     }

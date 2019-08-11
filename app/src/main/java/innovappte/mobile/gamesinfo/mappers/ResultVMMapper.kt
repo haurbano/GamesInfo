@@ -1,14 +1,11 @@
 package innovappte.mobile.gamesinfo.mappers
 
 import innovappte.mobile.domain.models.Fixture
-import innovappte.mobile.gamesinfo.viewmodels.FixtureViewModel
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.util.*
+import innovappte.mobile.gamesinfo.viewmodels.ResultViewModel
 
-class FixtureVMMapper(private val dateMapper: DateMapper) {
-    private fun transform(fixture: Fixture): FixtureViewModel {
-        return FixtureViewModel(
+class ResultVMMapper(private val dateMapper: DateMapper) {
+    private fun transform(fixture: Fixture): ResultViewModel {
+        return ResultViewModel(
             awayTeam = fixture.awayTeam,
             competitionStage = fixture.competitionStage,
             readableDate = dateMapper.getReadableDate(fixture.date),
@@ -18,11 +15,12 @@ class FixtureVMMapper(private val dateMapper: DateMapper) {
             homeTeam = fixture.homeTeam,
             id = fixture.id,
             type = fixture.type,
-            venue = fixture.venue
+            venue = fixture.venue,
+            score = fixture.score
         )
     }
 
-    operator fun invoke(fixtures: List<Fixture>): List<FixtureViewModel> {
+    operator fun invoke(fixtures: List<Fixture>): List<ResultViewModel> {
         return fixtures.map(::transform)
     }
 }

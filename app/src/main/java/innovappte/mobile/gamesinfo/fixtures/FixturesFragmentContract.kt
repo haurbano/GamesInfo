@@ -6,7 +6,7 @@ import io.reactivex.Single
 interface FixturesFragmentContract {
     interface View {
         fun updateFixtures(fixtures: List<FixtureViewModel>)
-        fun showErroGettingFixtures()
+        fun showErrorGettingFixtures()
     }
 
     interface Presenter {

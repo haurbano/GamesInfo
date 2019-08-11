@@ -11,6 +11,7 @@ class FixtureAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     init {
         delegateAdapters.put(ViewTypeValues.FIXTURE, FixtureDelegateAdapter())
+        delegateAdapters.put(ViewTypeValues.RESULT, ResultsDelegateAdapter())
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -20,7 +21,7 @@ class FixtureAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount() = items.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        delegateAdapters[getItemViewType(position)]!!.onBindViewHolder(holder, items[position])
+        delegateAdapters[getItemViewType(position)]?.onBindViewHolder(holder, items[position])
     }
 
     override fun getItemViewType(position: Int) = items[position].getViewType()
