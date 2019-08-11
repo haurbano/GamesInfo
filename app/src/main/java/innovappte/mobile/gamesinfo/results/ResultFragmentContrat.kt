@@ -14,6 +14,7 @@ interface ResultFragmentContrat {
     interface Presenter {
         fun fillResults()
         fun attachView(view: View)
+        fun filterByCompetition(competitionName: String)
     }
 
     interface Model {

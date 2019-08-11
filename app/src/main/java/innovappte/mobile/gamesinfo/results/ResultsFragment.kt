@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 
@@ -34,6 +35,7 @@ class ResultsFragment : PagerFragment(), ResultFragmentContrat.View {
 
     override fun onStart() {
         super.onStart()
+        addViewListeners()
         presenter.fillResults()
     }
 
@@ -55,6 +57,21 @@ class ResultsFragment : PagerFragment(), ResultFragmentContrat.View {
         Snackbar.make(rvFixtures,getString(R.string.network_error_msg), Snackbar.LENGTH_LONG)
             .setAction(getString(R.string.retry_msg)) { presenter.fillResults() }
             .show()
+    }
+
+    private fun addViewListeners() {
+        searchResults.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                presenter.filterByCompetition(query ?: "")
+                return true
+            }
+
+            override fun onQueryTextChange(query: String?): Boolean {
+                presenter.filterByCompetition(query ?: "")
+                return true
+            }
+
+        })
     }
 
     companion object {

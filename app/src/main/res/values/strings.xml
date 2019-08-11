@@ -5,4 +5,5 @@
     <string name="separator_line">-</string>
     <string name="network_error_msg">Network Error</string>
     <string name="retry_msg">Retry</string>
+    <string name="competition_hint">Search for Competition</string>
 </resources>
