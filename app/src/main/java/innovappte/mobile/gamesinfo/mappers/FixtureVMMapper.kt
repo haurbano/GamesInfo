@@ -18,7 +18,8 @@ class FixtureVMMapper(private val dateMapper: DateMapper) {
             homeTeam = fixture.homeTeam,
             id = fixture.id,
             type = fixture.type,
-            venue = fixture.venue
+            venue = fixture.venue,
+            date = dateMapper.getDate(fixture.date)
         )
     }
 

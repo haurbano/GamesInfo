@@ -12,6 +12,7 @@ class FixtureAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     init {
         delegateAdapters.put(ViewTypeValues.FIXTURE, FixtureDelegateAdapter())
         delegateAdapters.put(ViewTypeValues.RESULT, ResultsDelegateAdapter())
+        delegateAdapters.put(ViewTypeValues.MONTH, MonthDividerDelegateAdapter())
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

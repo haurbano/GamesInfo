@@ -11,6 +11,7 @@ import innovappte.mobile.domain.models.Fixture
 
 import innovappte.mobile.gamesinfo.R
 import innovappte.mobile.gamesinfo.adapters.FixtureAdapter
+import innovappte.mobile.gamesinfo.adapters.ViewType
 import innovappte.mobile.gamesinfo.mainscreen.PagerFragment
 import innovappte.mobile.gamesinfo.viewmodels.FixtureViewModel
 import kotlinx.android.synthetic.main.fragment_fixtures.*
@@ -42,7 +43,7 @@ class FixturesFragment : PagerFragment(), FixturesFragmentContract.View {
         presenter.fillFixtures()
     }
 
-    override fun updateFixtures(fixtures: List<FixtureViewModel>) {
+    override fun updateFixtures(fixtures: List<ViewType>) {
         fixtureAdapter.refreshItems(fixtures)
     }
 

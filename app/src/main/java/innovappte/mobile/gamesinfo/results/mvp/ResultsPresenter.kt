@@ -12,6 +12,7 @@ class ResultsPresenter(
 
     override fun fillResults() {
         val disposable = model.getResults()
+            .map { model.addMonthsDividers(it) }
             .subscribe(
                 { results -> view.updateResults(results) },
                 { view.showNetworkError() }

@@ -3,6 +3,7 @@ package innovappte.mobile.gamesinfo.viewmodels
 import innovappte.mobile.domain.models.*
 import innovappte.mobile.gamesinfo.adapters.ViewType
 import innovappte.mobile.gamesinfo.adapters.ViewTypeValues
+import java.time.LocalDateTime
 
 class ResultViewModel(
     awayTeam: AwayTeam,
@@ -15,7 +16,8 @@ class ResultViewModel(
     id: Int,
     type: String,
     venue: Venue,
-    val score: Score?
+    val score: Score?,
+    date: LocalDateTime
 ): FixtureViewModel(
     awayTeam,
     competitionStage,
@@ -26,7 +28,8 @@ class ResultViewModel(
     homeTeam,
     id,
     type,
-    venue
+    venue,
+    date
 ), ViewType {
     override fun getViewType() = ViewTypeValues.RESULT
 }

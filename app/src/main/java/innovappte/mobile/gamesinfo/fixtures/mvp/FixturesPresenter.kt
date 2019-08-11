@@ -13,6 +13,7 @@ class FixturesPresenter(
 
     override fun fillFixtures() {
         val disposable = model.getFixtures()
+            .map { model.addMonthsDividers(it) }
             .subscribe(
             { fixtures -> view.updateFixtures(fixtures)},
             { view.showErrorGettingFixtures()}

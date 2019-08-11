@@ -16,7 +16,8 @@ class ResultVMMapper(private val dateMapper: DateMapper) {
             id = fixture.id,
             type = fixture.type,
             venue = fixture.venue,
-            score = fixture.score
+            score = fixture.score,
+            date = dateMapper.getDate(fixture.date)
         )
     }
 

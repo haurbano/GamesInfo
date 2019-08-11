@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 class DateMapper {
-    private fun getDate(stringDate: String): LocalDateTime {
+    fun getDate(stringDate: String): LocalDateTime {
         val inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH)
         return  LocalDateTime.parse(stringDate, inputFormatter)
     }

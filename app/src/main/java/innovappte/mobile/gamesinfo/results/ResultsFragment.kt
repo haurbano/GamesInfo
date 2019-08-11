@@ -9,6 +9,7 @@ import com.google.android.material.snackbar.Snackbar
 
 import innovappte.mobile.gamesinfo.R
 import innovappte.mobile.gamesinfo.adapters.FixtureAdapter
+import innovappte.mobile.gamesinfo.adapters.ViewType
 import innovappte.mobile.gamesinfo.mainscreen.PagerFragment
 import innovappte.mobile.gamesinfo.viewmodels.ResultViewModel
 import kotlinx.android.synthetic.main.fragment_fixtures.*
@@ -46,7 +47,7 @@ class ResultsFragment : PagerFragment(), ResultFragmentContrat.View {
         rvResults.adapter = resultsAdapter
     }
 
-    override fun updateResults(results: List<ResultViewModel>) {
+    override fun updateResults(results: List<ViewType>) {
         resultsAdapter.refreshItems(results)
     }
 
