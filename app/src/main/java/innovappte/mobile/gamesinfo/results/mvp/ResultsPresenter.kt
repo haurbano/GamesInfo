@@ -10,7 +10,6 @@ class ResultsPresenter(
 
     lateinit var view: ResultFragmentContrat.View
     private val disposables = CompositeDisposable()
-    private val completeList = ArrayList<FixtureViewModel>()
 
     override fun attachView(view: ResultFragmentContrat.View) {
         this.view = view
@@ -18,26 +17,17 @@ class ResultsPresenter(
 
     override fun fillResults() {
         val disposable = model.getResults()
-            .subscribe(
-                { results ->
-                    updateResultsToFilter(results)
-                    updateResultsInView(results)
-                },
-                { view.showNetworkError() }
-            )
+            .subscribe({ updateResultsInView(it) }, { showError(it) })
+
         disposables.add(disposable)
     }
 
     override fun filterByCompetition(competitionName: String) {
-        if (competitionName.isNotEmpty()) {
-            val competitionNameLowerCase = competitionName.toLowerCase()
-            val filteredList = completeList.filter {
-                it.competitionStage.competition.name.toLowerCase().startsWith(competitionNameLowerCase)
-            }
-            updateResultsInView(filteredList)
-        } else {
-            updateResultsInView(completeList)
-        }
+        val disposable = model.getResults()
+            .map { applyCompetitionFilter(competitionName, it) }
+            .subscribe({ updateResultsInView(it) }, { showError(it) })
+
+        disposables.add(disposable)
     }
 
     private fun updateResultsInView(results: List<FixtureViewModel>) {
@@ -45,10 +35,15 @@ class ResultsPresenter(
         view.updateResults(resultsWithDividers)
     }
 
-    private fun updateResultsToFilter(results: List<FixtureViewModel>) {
-        completeList.apply {
-            clear()
-            addAll(results)
+    private fun showError(error: Throwable) {
+        view.showNetworkError()
+    }
+
+    private fun applyCompetitionFilter(competitionName: String, list: List<FixtureViewModel>): List<FixtureViewModel> {
+        if (competitionName.isEmpty()) return list
+        val competitionNameLowerCase = competitionName.toLowerCase()
+        return list.filter { fixture ->
+            fixture.competitionStage.competition.name.toLowerCase().startsWith(competitionNameLowerCase)
         }
     }
 }
