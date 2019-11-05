@@ -6,7 +6,8 @@
     <dimen name="result_team_one_text_size">30sp</dimen>
     <dimen name="result_team_second_text_size">30sp</dimen>
     <dimen name="day_name_size">24sp</dimen>
-    <dimen name="pager_tap_strip_size">40dp</dimen>
+    <dimen name="pager_tap_strip_size">50dp</dimen>
+    <dimen name="pager_title_text_size">20sp</dimen>
 
     <dimen name="extra_small_default_margin">8dp</dimen>
     <dimen name="small_default_margin">16dp</dimen>
