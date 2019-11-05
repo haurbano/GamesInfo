@@ -33,6 +33,7 @@ dependencies {
     implementation Deps.rxJava
 
     testImplementation TestDependencies.junit
+    testImplementation TestDependencies.mockito
 
     androidTestImplementation AndroidTestDependencies.runner
     androidTestImplementation AndroidTestDependencies.espresso

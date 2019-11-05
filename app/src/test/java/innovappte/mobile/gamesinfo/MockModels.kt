@@ -5,6 +5,17 @@ import innovappte.mobile.gamesinfo.viewmodels.ResultViewModel
 import java.time.LocalDateTime
 
 object MockModels {
+
+    fun getFixture() = Fixture(
+        awayTeam = getAwayTeam(),
+        competitionStage = getCompetitionStage(),
+        date = "",
+        homeTeam = getHomeTeam(),
+        score = getScore(),
+        id = 0,
+        venue = getVenue(),
+        type = ""
+    )
     fun getResultViewModel(): ResultViewModel {
         return ResultViewModel(
             awayTeam = getAwayTeam(),

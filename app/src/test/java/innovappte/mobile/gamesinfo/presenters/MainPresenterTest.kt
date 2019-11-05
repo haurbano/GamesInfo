@@ -1,4 +1,4 @@
-package innovappte.mobile.gamesinfo
+package innovappte.mobile.gamesinfo.presenters
 
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify

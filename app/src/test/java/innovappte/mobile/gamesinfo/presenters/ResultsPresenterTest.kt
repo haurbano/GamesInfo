@@ -1,9 +1,10 @@
-package innovappte.mobile.gamesinfo
+package innovappte.mobile.gamesinfo.presenters
 
 import com.nhaarman.mockitokotlin2.argumentCaptor
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
+import innovappte.mobile.gamesinfo.MockModels
 import innovappte.mobile.gamesinfo.adapters.ViewType
 import innovappte.mobile.gamesinfo.results.ResultFragmentContrat
 import innovappte.mobile.gamesinfo.results.mvp.ResultsPresenter
