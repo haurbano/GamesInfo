@@ -39,6 +39,7 @@ dependencies {
     implementation Deps.materialGoogle
 
     testImplementation TestDependencies.junit
+    testImplementation TestDependencies.mockito
 
     androidTestImplementation AndroidTestDependencies.runner
     androidTestImplementation AndroidTestDependencies.espresso
