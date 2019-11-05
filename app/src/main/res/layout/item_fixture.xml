@@ -13,88 +13,91 @@
             android:textStyle="bold"
             android:textSize="@dimen/competition_name_size"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/extra_small_default_margin"
             android:textColor="@color/black"
             android:textAllCaps="true"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="@dimen/extra_small_default_margin"/>
+
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtVenueName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/extra_small_default_margin"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"
             app:layout_constraintTop_toBottomOf="@+id/txtCompetentionName"
-            android:layout_marginTop="8dp"
-            tools:text="Stanfofd Bridge"/>
+            tools:text="Stanfofd Bridge" />
+
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtSeparator"
-            app:layout_constraintStart_toEndOf="@+id/txtVenueName"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtCompetentionName"
-            android:text="@string/separator_line"/>
-    <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/extra_small_default_margin"
+            android:text="@string/separator_line"
+            app:layout_constraintStart_toEndOf="@+id/txtVenueName"
+            app:layout_constraintTop_toBottomOf="@+id/txtCompetentionName" />
+
+    <TextView
             android:id="@+id/txtMatchDateAndTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/extra_small_default_margin"
             app:layout_constraintStart_toEndOf="@+id/txtSeparator"
-            android:layout_marginStart="8dp"
-            tools:text="Sep 12, 2017 at 20:00"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtCompetentionName"/>
+            app:layout_constraintTop_toBottomOf="@+id/txtCompetentionName"
+            tools:text="Sep 12, 2017 at 20:00" />
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtHomeTeam"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/small_default_margin"
             app:layout_constraintTop_toBottomOf="@+id/txtVenueName"
             tools:text="Chelsea FC"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/extra_small_default_margin"
             android:textColor="@color/teamsColor"
             android:textSize="@dimen/team_name_size"
             android:textStyle="bold"/>
+
     <TextView
+            android:id="@+id/txtAwayTeam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtAwayTeam" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtHomeTeam"
+            android:layout_marginStart="@dimen/extra_small_default_margin"
+            android:textColor="@color/teamsColor"
+            android:textSize="@dimen/team_name_size"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" tools:text="Arsenal"
-            android:textColor="@color/teamsColor"
-            android:textSize="@dimen/team_name_size"
-            android:textStyle="bold"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtDateFixture"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtMatchDateAndTime"
-            tools:text="12"
-            android:textSize="@dimen/day_number_size"
-            app:layout_constraintStart_toStartOf="@+id/txtDayFixture"
-            app:layout_constraintEnd_toEndOf="@+id/txtDayFixture"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtDayFixture"
-            android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/txtDateFixture"
+            tools:text="Arsenal" />
+
+    <TextView
+            android:id="@+id/txtDateFixture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/day_number_size"
+            app:layout_constraintEnd_toEndOf="@+id/txtDayFixture"
+            app:layout_constraintStart_toStartOf="@+id/txtDayFixture"
+            app:layout_constraintTop_toTopOf="@+id/txtHomeTeam"
+            tools:text="12" />
+
+    <TextView
+            android:id="@+id/txtDayFixture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:textSize="@dimen/day_name_size"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"
-            tools:text="TUE"
-            android:textSize="@dimen/day_name_size"/>
+            app:layout_constraintTop_toBottomOf="@+id/txtDateFixture"
+            tools:text="TUE" />
+
     <View
-            android:background="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/txtAwayTeam"
+            android:layout_marginStart="@dimen/extra_small_default_margin"
+            android:layout_marginTop="@dimen/medium_default_margin"
+            android:layout_marginEnd="@dimen/extra_small_default_margin"
+            android:background="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/txtAwayTeam" />
 </androidx.constraintlayout.widget.ConstraintLayout>

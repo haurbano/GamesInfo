@@ -3,8 +3,8 @@
               xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:paddingTop="8dp"
-              android:paddingBottom="8dp"
+              android:paddingTop="@dimen/small_default_margin"
+              android:paddingBottom="@dimen/small_default_margin"
               android:background="@color/teamsColor">
 
     <TextView
