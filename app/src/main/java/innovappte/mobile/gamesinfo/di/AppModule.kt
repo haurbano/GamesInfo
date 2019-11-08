@@ -4,6 +4,7 @@ import innovappte.mobile.domain.usecases.GetFixturesUseCase
 import innovappte.mobile.domain.usecases.GetResultsUseCase
 import innovappte.mobile.domain.usecases.impl.GetFixturesUseCaseImpl
 import innovappte.mobile.domain.usecases.impl.GetResultsUseCaseImpl
+import innovappte.mobile.gamesinfo.adapters.FixtureAdapter
 import innovappte.mobile.gamesinfo.fixtures.FixturesFragmentContract
 import innovappte.mobile.gamesinfo.fixtures.mvp.FixturesModel
 import innovappte.mobile.gamesinfo.fixtures.mvp.FixturesPresenter
@@ -31,4 +32,6 @@ val appModule = module {
     factory { ResultVMMapper(get()) }
 
     factory { DateMapper() }
+
+    factory { FixtureAdapter() }
 }

@@ -37,6 +37,9 @@ dependencies {
     implementation Deps.rxJava
     implementation Deps.rxAndroid
     implementation Deps.materialGoogle
+    implementation Deps.dagger
+
+    annotationProcessor Deps.daggerCompiler
 
     testImplementation TestDependencies.junit
     testImplementation TestDependencies.mockito

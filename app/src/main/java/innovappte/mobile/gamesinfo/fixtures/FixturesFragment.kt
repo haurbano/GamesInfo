@@ -20,7 +20,7 @@ import org.koin.android.ext.android.inject
 class FixturesFragment : PagerFragment(), FixturesFragmentContract.View {
 
     private val presenter : FixturesFragmentContract.Presenter by inject()
-    private val fixtureAdapter by lazy { FixtureAdapter() }
+    private val fixtureAdapter: FixtureAdapter by inject()
 
     override fun getFragmentTitle() = "Fixtures"
 

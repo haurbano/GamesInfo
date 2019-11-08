@@ -20,7 +20,7 @@ import org.koin.android.ext.android.inject
 class ResultsFragment : PagerFragment(), ResultFragmentContrat.View {
 
     private val presenter: ResultFragmentContrat.Presenter by inject()
-    private val resultsAdapter by lazy { FixtureAdapter() }
+    private val resultsAdapter: FixtureAdapter by inject()
 
     override fun getFragmentTitle() = "Results"
 
