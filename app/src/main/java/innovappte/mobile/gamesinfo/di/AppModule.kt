@@ -32,6 +32,4 @@ val appModule = module {
     factory { ResultVMMapper(get()) }
 
     factory { DateMapper() }
-
-    factory { FixtureAdapter() }
 }

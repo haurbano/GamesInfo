@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import innovappte.mobile.domain.models.Fixture
+import innovappte.mobile.gamesinfo.App
 
 import innovappte.mobile.gamesinfo.R
 import innovappte.mobile.gamesinfo.adapters.FixtureAdapter
@@ -16,11 +17,19 @@ import innovappte.mobile.gamesinfo.mainscreen.PagerFragment
 import innovappte.mobile.gamesinfo.viewmodels.FixtureViewModel
 import kotlinx.android.synthetic.main.fragment_fixtures.*
 import org.koin.android.ext.android.inject
+import javax.inject.Inject
 
 class FixturesFragment : PagerFragment(), FixturesFragmentContract.View {
 
     private val presenter : FixturesFragmentContract.Presenter by inject()
-    private val fixtureAdapter: FixtureAdapter by inject()
+
+    @Inject
+    lateinit var fixtureAdapter: FixtureAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (activity?.application as App).applicationComponent.inject(this)
+    }
 
     override fun getFragmentTitle() = "Fixtures"
 

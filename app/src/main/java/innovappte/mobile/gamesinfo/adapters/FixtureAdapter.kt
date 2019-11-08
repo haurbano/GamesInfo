@@ -3,8 +3,9 @@ package innovappte.mobile.gamesinfo.adapters
 import android.view.ViewGroup
 import androidx.collection.SparseArrayCompat
 import androidx.recyclerview.widget.RecyclerView
+import javax.inject.Inject
 
-class FixtureAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class FixtureAdapter @Inject constructor(): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var items: ArrayList<ViewType> = ArrayList()
     private var delegateAdapters = SparseArrayCompat<ViewTypeDelagateAdapter>()

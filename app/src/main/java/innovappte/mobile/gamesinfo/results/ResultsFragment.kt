@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import innovappte.mobile.gamesinfo.App
 
 import innovappte.mobile.gamesinfo.R
 import innovappte.mobile.gamesinfo.adapters.FixtureAdapter
@@ -16,14 +17,21 @@ import innovappte.mobile.gamesinfo.viewmodels.ResultViewModel
 import kotlinx.android.synthetic.main.fragment_fixtures.*
 import kotlinx.android.synthetic.main.fragment_results.*
 import org.koin.android.ext.android.inject
+import javax.inject.Inject
 
 class ResultsFragment : PagerFragment(), ResultFragmentContrat.View {
 
     private val presenter: ResultFragmentContrat.Presenter by inject()
-    private val resultsAdapter: FixtureAdapter by inject()
+
+    @Inject
+    lateinit var resultsAdapter: FixtureAdapter
 
     override fun getFragmentTitle() = "Results"
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (activity?.application as App).applicationComponent.inject(this)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

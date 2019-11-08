@@ -2,6 +2,7 @@ import Versions.androidXCore_version
 import Versions.androidXLegacyVersion
 import Versions.app_compat_version
 import Versions.constrain_layout_version
+import Versions.daggerVersion
 import Versions.gson_version
 import Versions.jUnitVersion
 import Versions.koin_version
@@ -23,6 +24,7 @@ object Versions {
     const val retrofit_version          = "2.6.1"
     const val androidXLegacyVersion     = "1.0.0"
     const val materialGoogle            = "1.0.0-rc02"
+    const val daggerVersion             = "2.25.2"
     // Testing
     const val mockitoVersion            = "2.2.0"
     const val jUnitVersion              = "4.12"
@@ -43,6 +45,11 @@ object Deps {
     const val gsonConvert         =    "com.squareup.retrofit2:converter-gson:$retrofit_version"
     const val rxjava2Adapter      =    "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
     const val materialGoogle      =    "com.google.android.material:material:${Versions.materialGoogle}"
+    const val dagger              =    "com.google.dagger:dagger:${daggerVersion}"
+    const val daggerAndroid       =    "com.google.dagger:dagger-android:${daggerVersion}"
+    const val daggerAndroidSupport =   "com.google.dagger:dagger-android-support:${daggerVersion}"
+    const val daggerCompilerAndroid =  "com.google.dagger:dagger-android-processor:${daggerVersion}"
+    const val daggerCompiler      =    "com.google.dagger:dagger-compiler:${daggerVersion}"
 }
 
 object TestDependencies {
